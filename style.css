@@ -1,0 +1,138 @@
+body {
+	height: 100vh;
+	background: radial-gradient(circle, rgba(2,159,202,1) 0%, rgba(166,148,233,1) 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    box-sizing: border-box;
+} /* suppression des pastilles */
+
+
+    .menu {
+    display: inline-block;
+} 
+
+      .menu > li {
+      	margin-top:20px ;
+        float: left;
+        color: #ffff;
+        width: 180px;
+        height: 40px;
+        line-height: 40px;
+        background: rgba(0, 0, 0, 0.7);
+        border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+        cursor: pointer;
+        font-size: 25px;
+      } /* placement+couleur+fond */
+
+      .menu a {
+        color: #ffff;
+        width: 180px;
+        height: 40px;
+        font-size: 25px;
+        text-decoration: none;
+      }
+
+      .menu a:hover {
+        color:#e39b47;
+      } /* changement couleur au passage de la souris pour les liens*/
+
+      .menu > li:hover {
+      	border-bottom-color: #e39b47;
+      	color:#e39b47;
+      } /* changement couleur au passage de la souris pour les gros titre sans lien*/
+
+      .sub-menu {
+        transform: scale(0);
+        transform-origin: top center;
+        transition: all 300ms ease-in-out;
+      } /* configuration affichage sous menu */
+
+
+      .sub-menu a {
+      	font-size: 20px;
+      }
+
+      .sub-menu li {
+        background: rgba(0, 0, 0, 0.8);
+        padding: 8px 0;
+        color: white;
+        border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+        transform: scale(0);
+        transform-origin: top center;
+        transition: all 300ms ease-in-out;
+      } /* configuration sous menu */
+
+      .sub-menu li:hover {
+      	color:#e39b47;
+      	border-bottom-color: #e39b47;
+        background: black;
+      } /* configuration sous menu au survol*/
+
+      .menu > li:hover .sub-menu li {
+        transform: scale(1);
+      } /* agrandissement des blocs sous menu */ 
+
+      .menu > li:hover .sub-menu {
+        transform: scale(1);
+      } /* agrandissement des blocs sous menu */
+
+      .imgtrain {
+        position: absolute;
+        margin-left: 33%;
+        margin-top: 8%;
+      }
+
+      /* Halo lumineux */
+      .imgtrain div {
+        position: relative;
+      }
+      .imgtrain div::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;  
+        z-index: 2;
+        display: block;
+        content: '';
+        width: 0;
+        height: 0;
+        background: rgba(255,255,255,.2);
+        border-radius: 100%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        opacity: 0;
+      }
+      .imgtrain div:hover::before {
+        -webkit-animation: circle .6s;
+        animation: circle .6s;
+      }
+      @-webkit-keyframes circle {
+        0% {
+          opacity: 1;
+        }
+        40% {
+          opacity: 1;
+        }
+        100% {
+          width: 200%;
+          height: 200%;
+          opacity: 0;
+        }
+      }
+      @keyframes circle {
+        0% {
+          opacity: 1;
+        }
+        40% {
+          opacity: 1;
+        }
+        100% {
+          width: 125%;
+          height: 125%;
+          opacity: 0;
+        }
+      }
+    
